@@ -21,6 +21,7 @@ import Bootstrap.Form.FormInternal as FormInternal
 import Html
 import Html.Attributes as Attributes
 import Html.Events as Events
+import Json.Encode
 
 
 {-| Opaque composable type representing a Checkbox.
@@ -340,4 +341,4 @@ stateAttribute state =
             Attributes.checked False
 
         Indeterminate ->
-            Attributes.attribute "indeterminate" "true"
+            Attributes.property "indeterminate" <| Json.Encode.bool True
